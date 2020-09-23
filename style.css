@@ -191,10 +191,16 @@ p {
   margin: auto;
 }
 
-/* About */
+/* About me */
+.about__description {
+  max-width: 1200px;
+  margin: auto;
+  text-align: left;
+}
+
 .about__majors {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 80px 0;
 }
 
