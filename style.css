@@ -279,10 +279,14 @@ p {
 }
 
 .skillset__left {
-  flex-basis: 60%;
+  flex-basis: 100%;
   background-color: var(--color-dark-gray);
   padding: 20px 40px;
 }
+
+/* .skillset__right {
+  flex-basis: 40%;
+} */
 
 .skill {
   margin-bottom: 32px;
@@ -302,10 +306,6 @@ p {
 .skill__value {
   height: 3px;
   background-color: var(--color-orange);
-}
-
-.skillset__right {
-  flex-basis: 40%;
 }
 
 .tools {
