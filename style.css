@@ -234,6 +234,11 @@ p {
   font-size: var(--font-small);
 }
 
+.career {
+  margin: 0 16px;
+  text-align: left;
+}
+
 .job {
   display: flex;
   align-items: center;
