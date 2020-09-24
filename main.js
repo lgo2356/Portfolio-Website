@@ -61,6 +61,35 @@ arrowUp.addEventListener("click", () => {
   scrollIntoView("#home");
 });
 
+// Skills
+const skillJava = document.querySelector(".skill__java");
+const skillKotlin = document.querySelector(".skill__kotlin");
+const skillHTML = document.querySelector(".skill__html");
+const skillCSS = document.querySelector(".skill__css");
+const skillJS = document.querySelector(".skill__js");
+
+document.addEventListener("scroll", () => {
+  if (window.scrollY >= 1050 && window.scrollY <= 1950) {
+    skillJava.childNodes[1].childNodes[1].style.height = "99%";
+    skillKotlin.childNodes[1].childNodes[1].style.height = "99%";
+    skillHTML.childNodes[1].childNodes[1].style.height = "90%";
+    skillCSS.childNodes[1].childNodes[1].style.height = "80%";
+    skillJS.childNodes[1].childNodes[1].style.height = "70%";
+  }
+
+  if (window.scrollY < 800 || window.scrollY > 1950) {
+    skillJava.childNodes[1].childNodes[1].style.height = "0%";
+    skillKotlin.childNodes[1].childNodes[1].style.height = "0%";
+    skillHTML.childNodes[1].childNodes[1].style.height = "0%";
+    skillCSS.childNodes[1].childNodes[1].style.height = "0%";
+    skillJS.childNodes[1].childNodes[1].style.height = "0%";
+  }
+});
+
+skillJava.addEventListener("click", () => {
+  skillJava.childNodes[1].childNodes[3].style.height = "99%";
+});
+
 // Projects
 const workBtnContainer = document.querySelector(".work__categories");
 const projectContainer = document.querySelector(".work__projects");

@@ -269,43 +269,41 @@ p {
 
 .skillset {
   display: flex;
-  background-color: var(--color-light-gray);
-  color: var(--color-light-white);
+  justify-content: space-around;
+  /* background-color: var(--color-dark-gray); */
+  color: var(--color-black);
   margin: 20px 0;
+  padding: 0 40px;
 }
 
-.skillset__title {
-  color: var(--color-white);
-}
-
-.skillset__left {
-  flex-basis: 100%;
-  background-color: var(--color-dark-gray);
-  padding: 20px 40px;
-}
-
-/* .skillset__right {
-  flex-basis: 40%;
-} */
-
-.skill {
-  margin-bottom: 32px;
+.skill:not(:last-child) {
+  /* margin-right: 52px; */
 }
 
 .skill__description {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  /* justify-content: space-between; */
 }
 
 .skill__bar {
-  width: 100%;
-  height: 3px;
+  display: flex;
+  flex-direction: column-reverse;
+  width: 30px;
+  height: 200px;
   background-color: var(--color-gray);
+  margin: auto;
 }
 
-.skill__value {
-  height: 3px;
+/* .skill__bar:hover .skill__value {
   background-color: var(--color-orange);
+  transition: all var(--animation-duration) ease-in;
+} */
+
+.skill__value {
+  height: 0%;
+  background-color: var(--color-orange);
+  transition: all var(--animation-duration) ease-out;
 }
 
 .tools {
@@ -378,6 +376,7 @@ p {
   width: 280px;
   height: 250px;
   margin: 2px;
+  padding: 10px;
   background-color: var(--color-light-white);
 }
 
@@ -388,6 +387,11 @@ p {
 
 .project.invisible {
   display: none;
+}
+
+.project__img__container {
+  display: flex;
+  justify-content: center;
 }
 
 .project__img {
@@ -424,41 +428,6 @@ p {
   margin-left: -12px;
   margin-top: 8px;
   background-color: var(--color-dark-white);
-}
-
-/* Testimonial */
-#testimonials {
-  background-color: var(--color-light-white);
-}
-
-.testimonials {
-  margin: 40px;
-}
-
-.testimonial {
-  display: flex;
-  justify-content: center;
-  margin: 32px 0;
-}
-
-.testimonial__avatar {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-}
-
-.testimonial__avatar:nth-child(odd) {
-  margin-right: 40px;
-}
-
-.testimonial__avatar:nth-child(even) {
-  margin-left: 40px;
-}
-
-.testimonial__speech-bubble {
-  padding: 18px;
-  background-color: var(--color-white);
-  border-radius: var(--size-border-radius);
 }
 
 /* Contact */
@@ -515,7 +484,7 @@ p {
 @media screen and (max-width: 768px) {
   :root {
     /* Font size */
-    --font-large: 30px;
+    --font-large: 33px;
     --font-medium: 18px;
     --font-regular: 16px;
     --font-small: 14px;
