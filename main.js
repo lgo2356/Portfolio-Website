@@ -1,6 +1,31 @@
 "use strict";
 
-// Make navbar transparent when it is on the top
+// 테스트
+const splashPage = document.querySelector("#splash");
+const greetingMsg = document.querySelector(".splash__greeting");
+const greetingMsg02 = document.querySelector(".splash__greeting-2");
+const mainContents = document.querySelector(".main__container");
+
+setTimeout(() => {
+  greetingMsg.style.opacity = 1;
+
+  setTimeout(() => {
+    greetingMsg02.style.opacity = 1;
+
+    setTimeout(() => {
+      const splashPageHeight = splashPage.getBoundingClientRect().height;
+      splashPage.style.transform = "translateY(-" + splashPageHeight + "px)";
+      mainContents.style.position = "relative";
+    }, 1300);
+  }, 1000);
+}, 100);
+
+// 소개글
+// 관심 분야에 대한 높은 몰입도
+const firstSubtitle = document.querySelector(".subtitle__first").childNodes[0]
+  .innerText;
+
+// Navbar 상단에 있을 때 투명하게 바꾸기
 const navbar = document.querySelector("#navbar");
 const navbarHeight = navbar.getBoundingClientRect().height;
 
@@ -12,7 +37,7 @@ document.addEventListener("scroll", () => {
   }
 });
 
-// Handle scrolling when tapping on the navbar menu
+// Navbar 메뉴 클릭시 해당 영역으로 스크롤 하기
 const navbarMenu = document.querySelector(".navbar__menu");
 navbarMenu.addEventListener("click", (event) => {
   const target = event.target;
@@ -33,15 +58,17 @@ navbarToggleBtn.addEventListener("click", () => {
   navbarMenu.classList.toggle("open");
 });
 
+// Home
 // Handle click on "contact me" button on home
 const contactButton = document.querySelector(".home__contact");
 contactButton.addEventListener("click", () => {
   scrollIntoView("#contact");
 });
 
-// Make home slowly fade to transparent as the window scrolls down
+// 스크롤을 내릴 때 Home 화면 점점 투명화시키기
 const home = document.querySelector(".home__container");
 const homeHeight = home.getBoundingClientRect().height;
+console.log(homeHeight);
 document.addEventListener("scroll", () => {
   home.style.opacity = 1 - window.scrollY / homeHeight;
 });
