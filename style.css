@@ -44,6 +44,10 @@ body {
   cursor: default;
 }
 
+body.en:lang(en) {
+  display: none;
+}
+
 a {
   text-decoration: none;
   color: var(--color-white);
@@ -91,6 +95,39 @@ p {
   font-weight: var(--weight-regular);
   color: var(--color-black);
   margin: 4px 0;
+}
+
+/* Splash */
+#splash {
+  /* display: none; */
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;greetingMsg02.style.opacity = 1;
+  background-color: var(--color-blue);
+  transition: all 600ms ease-in-out;
+}
+
+.splash__greeting {
+  text-align: center;
+  color: var(--color-white);
+  opacity: 0;
+  transition: all 700ms ease-in;
+}
+
+.splash__greeting-2 {
+  text-align: center;
+  color: var(--color-white);
+  opacity: 0;
+  transition: all 700ms ease-in;
+}
+
+.main__container {
+  z-index: 1;
+  position: fixed;
 }
 
 /* Navbar */
