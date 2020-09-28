@@ -93,14 +93,6 @@ document.addEventListener("scroll", () => {
     skillCSS.childNodes[1].childNodes[1].style.height = "80%";
     skillJS.childNodes[1].childNodes[1].style.height = "70%";
   }
-
-  // if (window.scrollY < 800 || window.scrollY > 1950) {
-  //   skillJava.childNodes[1].childNodes[1].style.height = "0%";
-  //   skillKotlin.childNodes[1].childNodes[1].style.height = "0%";
-  //   skillHTML.childNodes[1].childNodes[1].style.height = "0%";
-  //   skillCSS.childNodes[1].childNodes[1].style.height = "0%";
-  //   skillJS.childNodes[1].childNodes[1].style.height = "0%";
-  // }
 });
 
 skillJava.addEventListener("click", () => {
