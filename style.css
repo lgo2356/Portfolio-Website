@@ -216,24 +216,35 @@ p {
   background-color: var(--color-dark-blue);
 }
 
-/* Section common */
-.section {
-  padding: 50px;
-  padding-top: 70px;
-  text-align: center;
-  margin: auto;
-}
-
-.section__container {
-  max-width: 1200px;
-  margin: auto;
-}
-
 /* About me */
 .about__description {
   max-width: 1200px;
   margin: auto;
   text-align: left;
+}
+
+.about__detail {
+  cursor: pointer;
+  color: var(--color-gray);
+}
+
+.about__detail:hover {
+  text-decoration: underline;
+}
+
+.about__1st__detail {
+}
+
+.about__1st__description {
+  display: none;
+}
+
+.about__2nd__description {
+  display: none;
+}
+
+.about__3rd__description {
+  display: none;
 }
 
 .about__majors {
@@ -516,6 +527,19 @@ p {
 .arrow-up.visible {
   opacity: 1;
   pointer-events: auto;
+}
+
+/* Section common */
+.section {
+  padding: 50px;
+  padding-top: 70px;
+  text-align: center;
+  margin: auto;
+}
+
+.section__container {
+  max-width: 1200px;
+  margin: auto;
 }
 
 /* For below 768px screen width */

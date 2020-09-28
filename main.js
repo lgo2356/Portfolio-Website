@@ -1,16 +1,5 @@
 "use strict";
 
-// 테스트
-const splashPage = document.querySelector("#splash");
-const greetingMsg = document.querySelector(".splash__greeting");
-const greetingMsg02 = document.querySelector(".splash__greeting-2");
-const mainContents = document.querySelector(".main__container");
-
-// 소개글
-// 관심 분야에 대한 높은 몰입도
-const firstSubtitle = document.querySelector(".subtitle__first").childNodes[0]
-  .innerText;
-
 // Splash
 splashPageAnimation();
 
@@ -63,6 +52,29 @@ document.addEventListener("scroll", () => {
   home.style.opacity = 1 - window.scrollY / homeHeight;
 });
 
+// About me
+const detail1st = document.querySelector(".about__1st__detail");
+const detail2nd = document.querySelector(".about__2nd__detail");
+const detail3rd = document.querySelector(".about__3rd__detail");
+const desc1st = document.querySelector(".about__1st__description");
+const desc2nd = document.querySelector(".about__2nd__description");
+const desc3rd = document.querySelector(".about__3rd__description");
+
+toggleDetail(detail1st, desc1st);
+toggleDetail(detail2nd, desc2nd);
+toggleDetail(detail3rd, desc3rd);
+
+// detail1st.addEventListener("click", () => {
+//   if (!isDetailed1st) {
+//     desc1st.style.display = "block";
+//     detail1st.innerHTML = "간략히";
+//     isDetailed1st = true;
+//   } else {
+//     desc1st.style.display = "none";
+//     detail1st.innerHTML = "자세히 보기";
+//     isDetailed1st = false;
+//   }
+// });
 // Show "arrow-up" button when scrolling down
 const arrowUp = document.querySelector(".arrow-up");
 document.addEventListener("scroll", () => {
@@ -136,6 +148,11 @@ workBtnContainer.addEventListener("click", (event) => {
 });
 
 function splashPageAnimation() {
+  const splashPage = document.querySelector("#splash");
+  const greetingMsg = document.querySelector(".splash__greeting");
+  const greetingMsg02 = document.querySelector(".splash__greeting-2");
+  const mainContents = document.querySelector(".main__container");
+
   setTimeout(() => {
     greetingMsg.style.opacity = 1;
 
@@ -159,4 +176,20 @@ function splashPageAnimation() {
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: "smooth" });
+}
+
+function toggleDetail(detail, description) {
+  let isDetailed = false;
+
+  detail.addEventListener("click", () => {
+    if (!isDetailed) {
+      description.style.display = "block";
+      detail.innerHTML = "간략히";
+    } else {
+      description.style.display = "none";
+      detail.innerHTML = "자세히 보기";
+    }
+
+    isDetailed = !isDetailed;
+  });
 }
