@@ -64,17 +64,6 @@ toggleDetail(detail1st, desc1st);
 toggleDetail(detail2nd, desc2nd);
 toggleDetail(detail3rd, desc3rd);
 
-// detail1st.addEventListener("click", () => {
-//   if (!isDetailed1st) {
-//     desc1st.style.display = "block";
-//     detail1st.innerHTML = "간략히";
-//     isDetailed1st = true;
-//   } else {
-//     desc1st.style.display = "none";
-//     detail1st.innerHTML = "자세히 보기";
-//     isDetailed1st = false;
-//   }
-// });
 // Show "arrow-up" button when scrolling down
 const arrowUp = document.querySelector(".arrow-up");
 document.addEventListener("scroll", () => {
