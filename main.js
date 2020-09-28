@@ -6,25 +6,15 @@ const greetingMsg = document.querySelector(".splash__greeting");
 const greetingMsg02 = document.querySelector(".splash__greeting-2");
 const mainContents = document.querySelector(".main__container");
 
-setTimeout(() => {
-  greetingMsg.style.opacity = 1;
-
-  setTimeout(() => {
-    greetingMsg02.style.opacity = 1;
-
-    setTimeout(() => {
-      const splashPageHeight = splashPage.getBoundingClientRect().height;
-      splashPage.style.transform = "translateY(-" + splashPageHeight + "px)";
-      mainContents.style.position = "relative";
-    }, 1300);
-  }, 1000);
-}, 100);
-
 // 소개글
 // 관심 분야에 대한 높은 몰입도
 const firstSubtitle = document.querySelector(".subtitle__first").childNodes[0]
   .innerText;
 
+// Splash
+splashPageAnimation();
+
+// Navbar
 // Navbar 상단에 있을 때 투명하게 바꾸기
 const navbar = document.querySelector("#navbar");
 const navbarHeight = navbar.getBoundingClientRect().height;
@@ -52,7 +42,7 @@ navbarMenu.addEventListener("click", (event) => {
   scrollIntoView(link);
 });
 
-// Navbar toggle button for small screen
+// Navbar 모바일 화면 토글 버튼 이벤트 처리
 const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
 navbarToggleBtn.addEventListener("click", () => {
   navbarMenu.classList.toggle("open");
@@ -96,7 +86,7 @@ const skillCSS = document.querySelector(".skill__css");
 const skillJS = document.querySelector(".skill__js");
 
 document.addEventListener("scroll", () => {
-  if (window.scrollY >= 1050 && window.scrollY <= 1950) {
+  if (window.scrollY >= 850 && window.scrollY <= 1950) {
     skillJava.childNodes[1].childNodes[1].style.height = "99%";
     skillKotlin.childNodes[1].childNodes[1].style.height = "99%";
     skillHTML.childNodes[1].childNodes[1].style.height = "90%";
@@ -104,13 +94,13 @@ document.addEventListener("scroll", () => {
     skillJS.childNodes[1].childNodes[1].style.height = "70%";
   }
 
-  if (window.scrollY < 800 || window.scrollY > 1950) {
-    skillJava.childNodes[1].childNodes[1].style.height = "0%";
-    skillKotlin.childNodes[1].childNodes[1].style.height = "0%";
-    skillHTML.childNodes[1].childNodes[1].style.height = "0%";
-    skillCSS.childNodes[1].childNodes[1].style.height = "0%";
-    skillJS.childNodes[1].childNodes[1].style.height = "0%";
-  }
+  // if (window.scrollY < 800 || window.scrollY > 1950) {
+  //   skillJava.childNodes[1].childNodes[1].style.height = "0%";
+  //   skillKotlin.childNodes[1].childNodes[1].style.height = "0%";
+  //   skillHTML.childNodes[1].childNodes[1].style.height = "0%";
+  //   skillCSS.childNodes[1].childNodes[1].style.height = "0%";
+  //   skillJS.childNodes[1].childNodes[1].style.height = "0%";
+  // }
 });
 
 skillJava.addEventListener("click", () => {
@@ -152,6 +142,27 @@ workBtnContainer.addEventListener("click", (event) => {
     projectContainer.classList.remove("anime-out");
   }, 300);
 });
+
+function splashPageAnimation() {
+  setTimeout(() => {
+    greetingMsg.style.opacity = 1;
+
+    setTimeout(() => {
+      greetingMsg02.style.opacity = 1;
+
+      setTimeout(() => {
+        const splashPageHeight = splashPage.getBoundingClientRect().height;
+        // splashPage.style.transform = "translateY(-" + splashPageHeight + "px)";
+        splashPage.style.opacity = 0;
+        mainContents.style.position = "relative";
+
+        setTimeout(() => {
+          splashPage.style.display = "none";
+        }, 600);
+      }, 1300);
+    }, 1000);
+  }, 100);
+}
 
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
