@@ -10,6 +10,7 @@
   --color-light-gray: #7c7979;
   --color-dark-gray: #4d4d4d;
   --color-blue: #73aace;
+  --color-dark-blue: #417b9d;
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
   --color-black: #000000;
@@ -106,7 +107,7 @@ p {
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100vh;greetingMsg02.style.opacity = 1;
+  height: 100vh;
   background-color: var(--color-blue);
   transition: all 600ms ease-in-out;
 }
@@ -168,7 +169,7 @@ p {
 }
 
 .navbar__menu__item:hover {
-  background-color: var(--color-dark-pink);
+  background-color: var(--color-dark-blue);
   border: 1px solid var(--color-white);
 }
 
@@ -212,7 +213,7 @@ p {
 }
 
 .home__contact:hover {
-  background-color: var(--color-orange);
+  background-color: var(--color-dark-blue);
 }
 
 /* Section common */
