@@ -170,6 +170,12 @@ function scrollIntoView(selector) {
 function toggleDetail(detail, description) {
   let isDetailed = false;
 
+  if (detail.innerHTML === "간략히") {
+    isDetailed = true;
+  } else {
+    isDetailed = false;
+  }
+
   detail.addEventListener("click", () => {
     if (!isDetailed) {
       description.style.display = "block";
