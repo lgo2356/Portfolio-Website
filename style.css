@@ -184,7 +184,8 @@ p {
 
 /* Home */
 #home {
-  background-color: var(--color-blue);
+  background: url("imgs/home_background.png");
+  /* background-color: var(--color-blue); */
   padding: 40px;
   padding-top: 120px;
   text-align: center;
